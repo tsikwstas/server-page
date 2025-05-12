@@ -14,15 +14,23 @@
         <span class="default-text">Join Now</span>
         <span class="hover-text">Copy from server IP</span>
       </button>
+      <div id="copied-popup" class="copied-popup">✅ Copied!</div>
     </div>
   </div>
 
   <script>
     const btn = document.getElementById('glow-btn');
+    const copiedPopup = document.getElementById('copied-popup');
+
     btn.addEventListener('click', () => {
+      // Copy to clipboard
       navigator.clipboard.writeText("tsikwstas.aternos.me")
         .then(() => {
-          console.log("Copied to clipboard!");
+          // Show "Copied!" popup with fade animation
+          copiedPopup.style.opacity = "1";
+          setTimeout(() => {
+            copiedPopup.style.opacity = "0"; // Fade out
+          }, 2000);
         })
         .catch(err => {
           console.error("Failed to copy: ", err);
