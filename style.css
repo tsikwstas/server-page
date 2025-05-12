@@ -42,22 +42,23 @@ body, html {
   background-color: #c40000;
   border: none;
   color: white;
-  padding: 16px 32px;
-  font-size: 1.2rem;
-  border-radius: 12px;
+  padding: 22px 40px;
+  font-size: 1.3rem;
+  border-radius: 14px;
   cursor: pointer;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  box-shadow: 0 0 35px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 0.6);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
+/* Keep glow consistent on hover */
 #glow-btn:hover {
-  background-color: #ff1a1a;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+  background-color: #c40000;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.4);
 }
 
-/* Text swapping */
+/* Text swap logic */
 #glow-btn .hover-text {
   position: absolute;
   top: 50%;
@@ -65,10 +66,12 @@ body, html {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
+  white-space: nowrap;
 }
 
 #glow-btn .default-text {
   transition: opacity 0.3s ease;
+  white-space: nowrap;
 }
 
 #glow-btn:hover .default-text {
