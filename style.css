@@ -38,23 +38,25 @@ body, html {
   transform: translateX(-50%) translateY(-5px);
 }
 
+/* Button design */
 #glow-btn {
-  background-color: #c40000;
+  background-color: #ff1a1a; /* Red by default */
   border: none;
   color: white;
-  padding: 22px 40px;
-  font-size: 1.3rem;
+  padding: 22px 50px;
+  font-size: 1.4rem;
   border-radius: 14px;
   cursor: pointer;
   box-shadow: 0 0 35px rgba(255, 0, 0, 1), 0 0 60px rgba(255, 0, 0, 0.6);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  width: auto;
 }
 
-/* Keep glow consistent on hover */
+/* Hover effect */
 #glow-btn:hover {
-  background-color: #c40000;
+  background-color: #c40000; /* Darker red when hovered */
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.4);
 }
 
@@ -80,4 +82,21 @@ body, html {
 
 #glow-btn:hover .hover-text {
   opacity: 1;
+}
+
+/* Copied Popup */
+.copied-popup {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
 }
