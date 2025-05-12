@@ -1,0 +1,66 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #000;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.label {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+#glow-btn {
+  background-color: #c40000;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  transition: all 0.3s ease;
+}
+
+.button-wrapper:hover .label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.button-wrapper:hover #glow-btn {
+  background-color: #ff1a1a;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+.button-wrapper:hover #glow-btn::after {
+  content: "Copy from server IP";
+}
+
+#glow-btn::after {
+  content: "Join Now";
+  display: block;
+  transition: all 0.3s ease;
+}
