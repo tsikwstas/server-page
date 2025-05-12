@@ -33,6 +33,11 @@ body, html {
   white-space: nowrap;
 }
 
+.button-wrapper:hover .label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
 #glow-btn {
   background-color: #c40000;
   border: none;
@@ -43,24 +48,33 @@ body, html {
   cursor: pointer;
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.button-wrapper:hover .label {
-  opacity: 1;
-  transform: translateX(-50%) translateY(-5px);
-}
-
-.button-wrapper:hover #glow-btn {
+#glow-btn:hover {
   background-color: #ff1a1a;
   box-shadow: 0 0 25px rgba(255, 0, 0, 1);
 }
 
-.button-wrapper:hover #glow-btn::after {
-  content: "Copy from server IP";
+/* Text swapping */
+#glow-btn .hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-#glow-btn::after {
-  content: "Join Now";
-  display: block;
-  transition: all 0.3s ease;
+#glow-btn .default-text {
+  transition: opacity 0.3s ease;
+}
+
+#glow-btn:hover .default-text {
+  opacity: 0;
+}
+
+#glow-btn:hover .hover-text {
+  opacity: 1;
 }
